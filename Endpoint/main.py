@@ -34,7 +34,7 @@ def sfc():
         sfc_code = 3
     elif "Windows Resource Protection could not start the repair service" in output_stripped:
         sfc_code = 4
-    elif "You must be an administrator" in output_stripped:
+    elif output_stripped.contains("You must be an administrator"):
         elevation_required = True
         sfc_code = 5
     else:
